@@ -1,112 +1,289 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ke Nhau Coffee</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ke Nhau Coffee — Trang chủ</title>
+    <link rel="icon" href="logo.png" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary: #2B6B7A;
+            /* nâu cà phê */
+            --secondary: #f2e2ce;
+            /* kem nhạt */
+            --accent: #2b6b7a;
+            /* biển */
+            --bg: #ffffff;
+            --text: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f8f5f0;
-            color: #333;
         }
 
+        body {
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+            color: #222;
+        }
+
+        /* Header */
         header {
-            background-color: #6b4f3b;
-            color: white;
-            padding: 20px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: 1100px;
+            margin: 16px auto;
+            background-color: var(--primary);
+            border-radius: 12px;
+            color: #fff;
         }
 
-        header h1 {
-            margin: 0;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        nav {
-            background-color: #a67c52;
-            padding: 10px;
-            text-align: center;
+        .brand img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .brand h1 {
+            font-size: 22px;
+            color: #fff;
+        }
+
+        .brand .subtitle {
+            font-size: 12px;
+            color: #f2e2ce;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 16px;
         }
 
         nav a {
-            color: white;
-            margin: 0 15px;
             text-decoration: none;
-            font-weight: bold;
+            color: #fff;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            text-decoration: underline;
+            background: rgba(255, 255, 255, 0.2);
         }
 
+        /* Hero */
         .hero {
-            text-align: center;
-            padding: 50px 20px;
-            background: url('https://via.placeholder.com/1200x400') no-repeat center center;
-            background-size: cover;
-            color: white;
+            max-width: 1100px;
+            margin: 32px auto;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 24px;
+            align-items: center;
         }
 
         .hero h2 {
-            font-size: 48px;
-            margin: 0;
+            font-size: 34px;
+            color: var(--primary);
+            margin-bottom: 12px;
         }
 
-        .content {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: auto;
+        .hero p {
+            margin-bottom: 18px;
+            color: #444;
         }
 
-        .content h3 {
-            color: #6b4f3b;
+        .cta {
+            display: inline-block;
+            padding: 12px 20px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 18px;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(35, 30, 20, 0.06);
+        }
+
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            border-radius: 10px;
+            background: #fff5eb;
         }
 
         footer {
-            background-color: #6b4f3b;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            max-width: 1100px;
+            margin: 32px auto;
+            padding: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 880px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Ke Nhau Coffee</h1>
+        <div class="brand">
+            <img src="Anh1.png" alt="Logo Ke Nhau" />
+            <div>
+                <h1>Ke Nhau Coffee</h1>
+                <div class="subtitle">Cà phê. Biển. Chill.</div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <a href="#gioi-thieu">Giới Thiệu</a>
-        <a href="#menu">Menu</a>
-        <a href="#lien-he">Liên Hệ</a>
-    </nav>
-    <section class="hero">
-        <h2>Thưởng Thức Hương Vị Đậm Đà</h2>
-    </section>
-    <section id="gioi-thieu" class="content">
-        <h3>Giới Thiệu</h3>
-        <p>Ke Nhau Coffee là nơi bạn có thể tận hưởng những tách cà phê thơm ngon, không gian chill ngắm hoàng hôn và
-            gió biển. Chúng tôi cam kết mang đến trải nghiệm cà phê tuyệt vời với nguyên liệu chất lượng, dịch vụ thân
-            thiện và một không gian thư giãn.</p>
-    </section>
-    <section id="menu" class="content">
-        <h3>Menu</h3>
-        <p>Chúng tôi cung cấp các loại cà phê pha phin, espresso, latte và các món giải khát khác. Hãy đến và thử những
-            hương vị đặc biệt chỉ có tại Ke Nhau Coffee!</p>
-    </section>
-    <section id="lien-he" class="content">
-        <h3>Liên Hệ</h3>
-        <p>Địa chỉ: 123 Đường Cafe, Thành phố Chill<br>
-            Số điện thoại: 0123 456 789<br>
-            Email: kenhaucoffee@example.com</p>
-    </section>
-    <footer>
-        &copy; 2025 Ke Nhau Coffee. Tất cả quyền được bảo lưu.
+
+    <main>
+        <section class="hero">
+            <div class="copy">
+                <h2>Nơi cà phê gặp gió biển</h2>
+                <p>Quán cà phê nhỏ, view thoáng, thức uống chuẩn vị. Hãy đến và tận hưởng không gian thư giãn bên bờ
+                    biển cùng chúng tôi!</p>
+                <a class="cta" href="#menu">Xem Menu</a>
+            </div>
+            <aside class="card">
+                <h3>Menu gợi ý</h3>
+                <div class="menu-list">
+                    <div class="menu-item">
+                        <div>Espresso</div>
+                        <div>45k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>Cappuccino</div>
+                        <div>55k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>Cold Brew</div>
+                        <div>60k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>Trà vải biển</div>
+                        <div>50k</div>
+                    </div>
+                </div>
+                <hr style="margin:14px 0;border:none;border-top:1px solid rgba(0,0,0,0.06)" />
+                <div style="font-size:13px;color:#666">Mở cửa: 07:00 - 22:00</div>
+            </aside>
+        </section>
+
+        <section id="menu" style="max-width:1100px;margin:18px auto;padding:0 18px">
+            <h3>Menu đầy đủ</h3>
+            <div class="card" style="margin-top:12px">
+                <div class="menu-list">
+                    <div class="menu-item">
+                        <div>Espresso</div>
+                        <div>45k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>Cappuccino</div>
+                        <div>55k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>Cold Brew</div>
+                        <div>60k</div>
+                    </div>
+                    <div class="menu-item">
+                        <div>Trà vải biển</div>
+                        <div>50k</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" style="max-width:1100px;margin:18px auto;padding:0 18px">
+            <h3>Giới thiệu</h3>
+            <div class="card" style="margin-top:12px">
+                <p>Ke Nhau Coffee là nơi bạn tìm thấy những tách cà phê chuẩn vị, cùng không gian mở thoáng đãng nhìn ra
+                    biển.
+                    Chúng tôi kết hợp hương cà phê truyền thống với phong cách hiện đại, mang đến trải nghiệm thư giãn
+                    tuyệt vời.
+                    Ghé quán, nhâm nhi đồ uống, trò chuyện cùng bạn bè và tận hưởng từng khoảnh khắc bình yên.</p>
+            </div>
+        </section>
+
+        <section id="contact" style="max-width:1100px;margin:18px auto;padding:0 18px">
+            <h3>Liên hệ</h3>
+            <div class="card" style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+                <div style="flex:1;min-width:240px">
+                    <strong>Địa chỉ</strong>
+                    <div style="margin-top:6px">18/3 Bờ Biển, Tôn Đức Thắng, Rạch Giá, An Giang.</div>
+                </div>
+                <div style="flex:1;min-width:240px">
+                    <strong>Email</strong>
+                    <div style="margin-top:6px">dnvkhang@kgc.edu.vn</div>
+                </div>
+                <div style="flex:1;min-width:160px">
+                    <strong>Hotline</strong>
+                    <div style="margin-top:6px">0944696954</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer
+        style="max-width:1100px;margin:32px auto;padding:18px;display:flex;justify-content:space-between;align-items:center;">
+
+        <!-- Logo / thương hiệu -->
+        <div class="footer-brand" style="display:flex;align-items:center;gap:8px;">
+            <span>© Ke Nhau Coffee</span>
+        </div>
+
+        <!-- Tác giả -->
+        <div class="footer-author" style="font-size:13px;color:#666;">
+            Đoàn Ngọc Vỉ Khang
+        </div>
+
     </footer>
+
 </body>
 
 </html>
